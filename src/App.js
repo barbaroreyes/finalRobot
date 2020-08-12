@@ -30,7 +30,7 @@ import './App.css';
      else {
       return (
         <div className ='tc'>
-          <h1 className ='f2'>Robots</h1>
+          <h1 className ='f1'>Robots</h1>
           <SearchBox searchange = {this.onSearchChange}/>
           <CardList robots = {filterRobot}/>
         </div>

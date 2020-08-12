@@ -4,7 +4,7 @@ import React from 'react';
     return (
         <div>
             <input 
-            className ='bg-light-blue ma3 pa2'
+            className ='bg-light-blue ma2 pa2'
              type = 'search' 
              placeholder ='search-robot'
              onChange= {searchange}
