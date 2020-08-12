@@ -16,8 +16,6 @@ import './App.css';
      fetch('https://jsonplaceholder.typicode.com/users')
      .then(Response => Response.json())
      .then(users => {this.setState({robots:users})})
-    
-     
    }
    onSearchChange = (event) => {
      this.setState({serchField: event.target.value})
@@ -26,16 +24,19 @@ import './App.css';
      const filterRobot = this.state.robots.filter( robots => {
        return robots.name.toLowerCase().includes(this.state.serchField.toLowerCase())
      })
-    return (
-      <div className ='tc'>
-        <h1 className ='f2'>Robots</h1>
-        <SearchBox searchange = {this.onSearchChange}/>
-        <CardList robots = {filterRobot}/>
-      </div>
-    );
-
-   }
-   
+     if(this.state.robots.length===0){
+       return <h1>Loading</h1>
+     }
+     else {
+      return (
+        <div className ='tc'>
+          <h1 className ='f2'>Robots</h1>
+          <SearchBox searchange = {this.onSearchChange}/>
+          <CardList robots = {filterRobot}/>
+        </div>
+      );
+     }
+   }  
   
 }
 
